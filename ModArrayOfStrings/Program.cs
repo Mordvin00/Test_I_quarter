@@ -15,13 +15,13 @@ string[] GetArrayStringConsole (string inConsolSimvol)
     arraySimvol = inConsolSimvol.Split(" ");
     return arraySimvol;
 }
+
 string[] GetArrayThreeSimvol (string[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        string simvol = array[i];
-        if (simvol.Length <= 3)
+        if (array[i].Length <= 3)
         {
             count++;
         }
@@ -29,15 +29,15 @@ string[] GetArrayThreeSimvol (string[] array)
     string[] arrayThreeSimvol = new string[count];
     for (int i = 0, j = 0; i < array.Length; i++)
     {
-        string simvol = array[i];
-        if (simvol.Length <= 3)
+        if (array[i].Length <= 3)
         {
-            arrayThreeSimvol[j] = simvol;
+            arrayThreeSimvol[j] = array[i];
             j++;
         }
     }
     return arrayThreeSimvol;
 }
+
 void Print (string[] array)
 {
     for (int i = 0; i < array.Length; i++)
@@ -46,7 +46,9 @@ void Print (string[] array)
     }
     Console.WriteLine();
 }
-Console.Write("Введите набор строк латинией через пробел: ");
+
+Console.Clear();
+Console.Write("Введите набор строк латинскими символами через пробел: ");
 string inStringSimvol = (Console.ReadLine()!);
 string[] arraySimvol = GetArrayStringConsole(inStringSimvol);
 Console.WriteLine();
